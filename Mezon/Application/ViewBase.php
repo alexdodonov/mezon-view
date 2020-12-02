@@ -2,6 +2,7 @@
 namespace Mezon\Application;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
+use Mezon\Application\ViewInterface;
 
 /**
  * Class ViewBase
@@ -16,7 +17,7 @@ use Mezon\HtmlTemplate\HtmlTemplate;
 /**
  * Base class for all views
  */
-abstract class ViewBase implements \Mezon\Application\ViewInterface
+abstract class ViewBase implements ViewInterface
 {
 
     /**
@@ -195,7 +196,7 @@ abstract class ViewBase implements \Mezon\Application\ViewInterface
      * @param bool $setTemplateVar
      *            do we need to set template parameter
      */
-    public function setViewParameter(string $name, $value, bool $setTemplateVar): void
+    public function setViewParameter(string $name, $value, bool $setTemplateVar = true): void
     {
         if ($this->template !== null && $setTemplateVar) {
             $this->template->setPageVar($name, $value);
@@ -209,10 +210,12 @@ abstract class ViewBase implements \Mezon\Application\ViewInterface
      *
      * @param string $name
      *            var name
+     * @param mixed $default
+     *            default value for unexisting parameter
      * @return mixed view's variable value
      */
-    public function getViewParameter(string $name)
+    public function getViewParameter(string $name, $default = null)
     {
-        return $this->variables[$name] ?? null;
+        return $this->variables[$name] ?? $default;
     }
 }

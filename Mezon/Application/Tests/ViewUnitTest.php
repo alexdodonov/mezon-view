@@ -2,8 +2,9 @@
 namespace Mezon\Application\Tests;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
+use PHPUnit\Framework\TestCase;
 
-class ViewUnitTest extends \PHPUnit\Framework\TestCase
+class ViewUnitTest extends TestCase
 {
 
     /**

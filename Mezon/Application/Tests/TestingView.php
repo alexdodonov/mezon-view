@@ -3,6 +3,7 @@ namespace Mezon\Application\Tests;
 
 use Mezon\Application\View;
 use Mezon\HtmlTemplate\HtmlTemplate;
+use Mezon\Application\Views\ViewRecordTrait;
 
 /**
  * View class for testing purposes
@@ -11,6 +12,8 @@ use Mezon\HtmlTemplate\HtmlTemplate;
  */
 class TestingView extends View
 {
+    
+    use ViewRecordTrait;
 
     public function __construct(?HtmlTemplate $template = null, string $viewName = 'default')
     {
