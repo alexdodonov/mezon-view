@@ -36,7 +36,7 @@ class ViewRecordUnitTest extends TestCase
                     $view = new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
 
                     $view->setViewParameter('model', \Mezon\Application\Tests\TestingModel::class);
-                    $view->setViewParameter('if-field-name', 'id');
+                    $view->setViewParameter('id-field-name', 'id');
                     $view->setViewParameter('template', 'single-record');
                     $view->setViewParameter('get-record-function', 'getById');
 

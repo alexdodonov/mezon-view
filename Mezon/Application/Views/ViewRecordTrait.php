@@ -50,7 +50,7 @@ trait ViewRecordTrait
             throw (new \Exception('Model class name was not defined', - 1));
         }
 
-        $fieldName = $this->getViewParameter('if-field-name', 'id');
+        $fieldName = $this->getViewParameter('id-field-name', 'id');
 
         $template = $this->getViewParameter('template');
         if ($template === null) {
