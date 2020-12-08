@@ -3,6 +3,8 @@ namespace Mezon\Application\Tests;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
+use Mezon\Router\Router;
+use Mezon\Transport\Request;
 
 class ViewRecordUnitTest extends TestCase
 {
@@ -35,7 +37,7 @@ class ViewRecordUnitTest extends TestCase
                 function () {
                     $view = new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
 
-                    $view->setViewParameter('model', \Mezon\Application\Tests\TestingModel::class);
+                    $view->setViewParameter('model', TestingModel::class);
                     $view->setViewParameter('id-field-name', 'id');
                     $view->setViewParameter('template', 'single-record');
                     $view->setViewParameter('get-record-function', 'getById');
@@ -48,7 +50,7 @@ class ViewRecordUnitTest extends TestCase
                 function () {
                     $view = new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
 
-                    $view->setViewParameter('model', \Mezon\Application\Tests\TestingModel::class);
+                    $view->setViewParameter('model', TestingModel::class);
                     $view->setViewParameter('template', 'single-record');
 
                     return $view;
@@ -67,6 +69,8 @@ class ViewRecordUnitTest extends TestCase
     public function testViewRecordForm(callable $setup): void
     {
         // setup
+        $router = new Router();
+        Request::registerRouter($router);
         $view = $setup();
 
         // test body
@@ -95,7 +99,7 @@ class ViewRecordUnitTest extends TestCase
                 function () {
                     $view = new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
 
-                    $view->setViewParameter('model', \Mezon\Application\Tests\TestingModel::class);
+                    $view->setViewParameter('model', TestingModel::class);
 
                     return $view;
                 }

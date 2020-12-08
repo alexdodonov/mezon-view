@@ -3,6 +3,7 @@ namespace Mezon\Application\Views;
 
 use Mezon\TemplateEngine\TemplateEngine;
 use Mezon\HtmlTemplate\HtmlTemplate;
+use Mezon\Transport\Request;
 
 /**
  * Trait ViewRecordTrait
@@ -61,8 +62,7 @@ trait ViewRecordTrait
 
         $model = new $modelClass();
 
-        // TODO use getParametersFetcher
-        $record = $model->$method($_GET[$fieldName]);
+        $record = $model->$method(Request::getParam($fieldName));
 
         return TemplateEngine::printRecord($this->getTemplate()->getBlock($template), $record);
     }
