@@ -35,6 +35,11 @@ class TestingView extends View
         return 'View rendered content';
     }
     
+    /**
+     * Was the default view called
+     * 
+     * @var boolean
+     */
     public static $defaultViewWasRendered = false;
 
     public function viewDefault(): string

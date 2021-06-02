@@ -42,23 +42,21 @@ class ViewStatic extends ViewBase
     }
 
     /**
-     * Method renders content from view
      *
-     * @param string $blockName
-     *            name of the block to be rendered
-     * @return string Generated content
+     * {@inheritdoc}
+     * @see \Mezon\Application\ViewInterface::render()
      */
-    public function render(string $blockName = ''): string
+    public function render(string $viewName = ''): string
     {
-        if ($blockName === '') {
-            $blockName = $this->blockName;
+        if ($viewName === '') {
+            $viewName = $this->blockName;
         }
 
-        if ($blockName === '') {
+        if ($viewName === '') {
             throw (new \Exception('Block name must be set', - 1));
         }
 
-        $content = $this->getTemplate()->getBlock($blockName);
+        $content = $this->getTemplate()->getBlock($viewName);
 
         $this->getTemplate()->compilePageVars($content);
 

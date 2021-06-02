@@ -2,7 +2,6 @@
 namespace Mezon\Application;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
-use Mezon\Application\ViewInterface;
 
 /**
  * Class ViewBase
@@ -44,7 +43,7 @@ abstract class ViewBase implements ViewInterface
     /**
      * Active template
      *
-     * @var HtmlTemplate
+     * @var HtmlTemplate|null
      */
     private $template = null;
 
