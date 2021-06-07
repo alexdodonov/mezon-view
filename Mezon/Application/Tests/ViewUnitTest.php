@@ -4,6 +4,11 @@ namespace Mezon\Application\Tests;
 use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for the view
+ *
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ViewUnitTest extends TestCase
 {
 

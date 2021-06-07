@@ -5,6 +5,11 @@ use Mezon\HtmlTemplate\HtmlTemplate;
 use Mezon\Application\ViewStatic;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for the static view
+ *
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ViewStaticUnitTest extends TestCase
 {
 

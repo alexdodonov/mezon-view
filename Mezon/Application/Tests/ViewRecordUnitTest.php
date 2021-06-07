@@ -6,6 +6,11 @@ use PHPUnit\Framework\TestCase;
 use Mezon\Router\Router;
 use Mezon\Transport\Request;
 
+/**
+ * Test cases for the record view
+ *
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ViewRecordUnitTest extends TestCase
 {
 
