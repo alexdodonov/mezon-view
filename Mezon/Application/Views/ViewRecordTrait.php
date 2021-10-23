@@ -46,24 +46,35 @@ trait ViewRecordTrait
      */
     public function viewRecord(): string
     {
-        $modelClass = $this->getViewParameter('model');
-        if ($modelClass === null) {
+        $modelClass = (string) $this->getViewParameter('model');
+        if ($modelClass === '') {
             throw (new \Exception('Model class name was not defined', - 1));
         }
 
-        $fieldName = $this->getViewParameter('id-field-name', 'id');
+        $fieldName = (string) $this->getViewParameter('id-field-name', 'id');
 
-        $template = $this->getViewParameter('template');
-        if ($template === null) {
+        $template = (string) $this->getViewParameter('template');
+        if ($template === '') {
             throw (new \Exception('Template name was not defined', - 1));
         }
 
-        $method = $this->getViewParameter('get-record-function', 'getById');
+        $method = (string) $this->getViewParameter('get-record-function', 'getById');
 
         $model = new $modelClass();
 
-        $record = $model->$method(Request::getParam($fieldName));
+        /**
+         *
+         * @psalm-var mixed $record result of the model
+         */
+        $record = call_user_func([
+            $model,
+            $method
+        ], Request::getParam($fieldName));
 
-        return TemplateEngine::printRecord($this->getTemplate()->getBlock($template), $record);
+        if (is_array($record) || is_object($record)) {
+            return TemplateEngine::printRecord($this->getTemplate()->getBlock($template), $record);
+        }
+
+        throw (new \Exception($modelClass . '->' . $method . ' must return object or array', - 1));
     }
 }

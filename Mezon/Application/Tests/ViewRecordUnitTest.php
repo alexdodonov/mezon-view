@@ -67,7 +67,7 @@ class ViewRecordUnitTest extends TestCase
     /**
      * Testing view record form
      *
-     * @param callable $setup
+     * @param callable():TestingView $setup
      *            setup method
      * @dataProvider viewRecordFormDataProvider
      */
@@ -115,7 +115,7 @@ class ViewRecordUnitTest extends TestCase
     /**
      * Testing exceptions
      *
-     * @param callable $setup
+     * @param callable():TestingView $setup
      *            setup method
      * @dataProvider exceptionsDataProvider
      */

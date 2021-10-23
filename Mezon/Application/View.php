@@ -59,13 +59,18 @@ class View extends ViewBase
         }
 
         if (method_exists($this, 'view' . $viewName)) {
-            return call_user_func([
+            /**
+             *
+             * @psalm-var string $result view generation result
+             */
+            $result = call_user_func([
                 $this,
                 'view' . $viewName
             ]);
+            return $result;
         }
 
-        throw (new \Exception('View "' . $viewName . '" was not found', -1));
+        throw (new \Exception('View "' . $viewName . '" was not found', - 1));
     }
 
     /**
