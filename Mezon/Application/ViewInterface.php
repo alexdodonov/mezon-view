@@ -50,20 +50,36 @@ interface ViewInterface
     public function setErrorCode(int $errorCode): void;
 
     /**
-     * Method return last error description
+     * Method return last error message
      *
-     * @return string last error description
+     * @return string last error message
      */
     public function getErrorMessage(): string;
 
     /**
-     * Method sets last error description
+     * Method sets last error message
      *
      * @param
-     *            string last error description
+     *            string last error message
      * @codeCoverageIgnore
      */
     public function setErrorMessage(string $errorMessage): void;
+
+    /**
+     * Method sets last success message
+     *
+     * @param
+     *            string last success message
+     * @codeCoverageIgnore
+     */
+    public function setSuccessMessage(string $successMessage): void;
+
+    /**
+     * Method return last success message
+     *
+     * @return string last success message
+     */
+    public function getSuccessMessage(): string;
 
     /**
      * Method sets view's var
