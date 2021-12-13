@@ -1,5 +1,5 @@
 <?php
-namespace Mezon\Application\Tests;
+namespace Mezon\View\Tests;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
@@ -46,7 +46,9 @@ class ViewUnitTest extends TestCase
         $view = new TestingViewUnexistingDefault();
 
         // assertions
+        $this->expectException(\Exception::class);
         $this->expectExceptionMessage('View "Default" was not found');
+        $this->expectExceptionCode(- 1);
 
         // test body
         $view->render();

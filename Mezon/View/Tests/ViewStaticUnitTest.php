@@ -1,8 +1,8 @@
 <?php
-namespace Mezon\Application\Tests;
+namespace Mezon\View\Tests;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
-use Mezon\Application\ViewStatic;
+use Mezon\ViewStatic;
 use PHPUnit\Framework\TestCase;
 
 /**

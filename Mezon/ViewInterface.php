@@ -1,5 +1,5 @@
 <?php
-namespace Mezon\Application;
+namespace Mezon;
 
 /**
  * Interface ViewInterface

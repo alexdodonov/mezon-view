@@ -1,7 +1,7 @@
 <?php
-namespace Mezon\Application\Tests;
+namespace Mezon\View\Tests;
 
-use Mezon\Application\View;
+use Mezon\View;
 
 /**
  * View class for testing purposes

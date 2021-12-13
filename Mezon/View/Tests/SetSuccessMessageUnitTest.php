@@ -1,5 +1,5 @@
 <?php
-namespace Mezon\Application\Tests;
+namespace Mezon\View\Tests;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
@@ -9,23 +9,23 @@ use PHPUnit\Framework\TestCase;
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-class SetErrorMessageUnitTest extends TestCase
+class SetSuccessMessageUnitTest extends TestCase
 {
 
     /**
-     * Testing method setErrorMessage
+     * Testing method setSuccessMessage
      */
-    public function testSetErrorMessage(): void
+    public function testSetSuccessMessage(): void
     {
         // setup
         $view = new TestingView(new HtmlTemplate(__DIR__));
 
         // test body
-        $view->setErrorMessage('111');
+        $view->setSuccessMessage('111');
 
         // assertions
-        $this->assertEquals('111', $view->getErrorMessage());
+        $this->assertEquals('111', $view->getSuccessMessage());
         $this->assertEquals('111', $view->getTemplate()
-            ->getPageVar(TestingView::ERROR_MESSAGE));
+            ->getPageVar(TestingView::SUCCESS_MESSAGE));
     }
 }

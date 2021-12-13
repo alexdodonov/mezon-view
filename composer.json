@@ -30,13 +30,14 @@
 	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
-			"Mezon\\": "./Mezon/"
+			"Mezon\\": "./Mezon/",
+			"Mezon\\View\\Tests\\": "./Mezon/View/Tests/"
 		}
 	},
 	"scripts": {
 		"test": "php ./vendor/phpunit/phpunit/phpunit --order-by=random",
 		"psalm": "php ./vendor/vimeo/psalm/psalm --show-info=true",
-		"infection" : "php ./vendor/infection/infection/bin/infection --threads=4 --min-msi=53",
+		"infection" : "php ./vendor/infection/infection/bin/infection --threads=4 --min-msi=22",
 		"debug": "php ./vendor/phpunit/phpunit/phpunit --order-by=random --filter testSetErrorMessageContent"
 	}
 }

@@ -1,9 +1,9 @@
 <?php
-namespace Mezon\Application\Tests;
+namespace Mezon\View\Tests;
 
-use Mezon\Application\View;
+use Mezon\View;
 use Mezon\HtmlTemplate\HtmlTemplate;
-use Mezon\Application\Views\ViewRecordTrait;
+use Mezon\Views\ViewRecordTrait;
 
 /**
  * View class for testing purposes

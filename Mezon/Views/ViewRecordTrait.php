@@ -1,5 +1,5 @@
 <?php
-namespace Mezon\Application\Views;
+namespace Mezon\Views;
 
 use Mezon\TemplateEngine\TemplateEngine;
 use Mezon\HtmlTemplate\HtmlTemplate;

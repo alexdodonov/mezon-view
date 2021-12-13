@@ -1,10 +1,10 @@
 {
 	"source": {
 		"directories": [
-			"./Mezon/*"
+			"./Mezon"
 		],
 		"excludes": [
-			"Tests"
+			"*/Tests"
 		]
 	},
 	"phpUnit": {

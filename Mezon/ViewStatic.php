@@ -1,5 +1,5 @@
 <?php
-namespace Mezon\Application;
+namespace Mezon;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
 
@@ -44,7 +44,7 @@ class ViewStatic extends ViewBase
     /**
      *
      * {@inheritdoc}
-     * @see \Mezon\Application\ViewInterface::render()
+     * @see \Mezon\ViewInterface::render()
      */
     public function render(string $viewName = ''): string
     {
