@@ -217,4 +217,30 @@ abstract class ViewBase implements ViewInterface
     {
         return $this->variables[$name] ?? $default;
     }
+
+    /**
+     * Method sets last error message content
+     *
+     * @param string $errorMessageLocator
+     *            last error message locator
+     */
+    public function setErrorMessageContent(string $errorMessageLocator): void
+    {
+        if ($this->templateWasSetup()) {
+            $this->getTemplate()->setErrorMessage($errorMessageLocator);
+        }
+    }
+
+    /**
+     * Method sets last success message content
+     *
+     * @param string $successMessageLocator
+     *            last success message locator
+     */
+    public function setSuccessMessageContent(string $successMessageLocator): void
+    {
+        if ($this->templateWasSetup()) {
+            $this->getTemplate()->setSuccessMessage($successMessageLocator);
+        }
+    }
 }

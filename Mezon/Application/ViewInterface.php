@@ -45,7 +45,6 @@ interface ViewInterface
      *
      * @param int $code
      *            code of the last error
-     * @codeCoverageIgnore
      */
     public function setErrorCode(int $errorCode): void;
 
@@ -59,18 +58,16 @@ interface ViewInterface
     /**
      * Method sets last error message
      *
-     * @param
-     *            string last error message
-     * @codeCoverageIgnore
+     * @param string $errorMessage
+     *            last error message
      */
     public function setErrorMessage(string $errorMessage): void;
 
     /**
      * Method sets last success message
      *
-     * @param
-     *            string last success message
-     * @codeCoverageIgnore
+     * @param string $successMessage
+     *            last success message
      */
     public function setSuccessMessage(string $successMessage): void;
 
@@ -101,4 +98,20 @@ interface ViewInterface
      * @return mixed view's variable value
      */
     public function getViewParameter(string $name);
+
+    /**
+     * Method sets last error message content
+     *
+     * @param string $errorMessageLocator
+     *            last error message locator
+     */
+    public function setErrorMessageContent(string $errorMessageLocator): void;
+
+    /**
+     * Method sets last success message content
+     *
+     * @param string $successMessageLocator
+     *            last success message locator
+     */
+    public function setSuccessMessageContent(string $successMessageLocator): void;
 }
