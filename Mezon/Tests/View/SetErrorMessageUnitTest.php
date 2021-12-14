@@ -1,8 +1,9 @@
 <?php
-namespace Mezon\View\Tests;
+namespace Mezon\Tests\View;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
+use Mezon\Tests\TestingView;
 
 /**
  * Test cases for the view
@@ -18,7 +19,7 @@ class SetErrorMessageUnitTest extends TestCase
     public function testSetErrorMessage(): void
     {
         // setup
-        $view = new TestingView(new HtmlTemplate(__DIR__));
+        $view = new TestingView(new HtmlTemplate(__DIR__ . '/../Res/'));
 
         // test body
         $view->setErrorMessage('111');

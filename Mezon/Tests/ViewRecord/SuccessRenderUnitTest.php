@@ -1,25 +1,20 @@
 <?php
-namespace Mezon\View\Tests;
+namespace Mezon\Tests\ViewRecord;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
 use Mezon\Router\Router;
 use Mezon\Transport\Request;
+use Mezon\Tests\TestingModel;
+use Mezon\Tests\TestingView;
 
 /**
  * Test cases for the record view
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-class ViewRecordUnitTest extends TestCase
+class SuccessRenderUnitTest extends TestCase
 {
-
-    /**
-     * Path to resources
-     *
-     * @var string
-     */
-    const RES_DIR = __DIR__ . '/Res/';
 
     /**
      * Default setup
@@ -40,7 +35,7 @@ class ViewRecordUnitTest extends TestCase
             # 0, success path
             [
                 function () {
-                    $view = new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
+                    $view = new TestingView(new HtmlTemplate(__DIR__ . '/../Res/'));
 
                     $view->setViewParameter('model', TestingModel::class);
                     $view->setViewParameter('id-field-name', 'id');
@@ -53,7 +48,7 @@ class ViewRecordUnitTest extends TestCase
             # 1, default values
             [
                 function () {
-                    $view = new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
+                    $view = new TestingView(new HtmlTemplate(__DIR__ . '/../Res/'));
 
                     $view->setViewParameter('model', TestingModel::class);
                     $view->setViewParameter('template', 'single-record');
@@ -83,51 +78,5 @@ class ViewRecordUnitTest extends TestCase
 
         // assertions
         $this->assertStringContainsString('some title', $result);
-    }
-
-    /**
-     * Data provider for the test testExceptions
-     *
-     * @return array testing data
-     */
-    public function exceptionsDataProvider(): array
-    {
-        return [
-            # 0, model class name is not defined
-            [
-                function () {
-                    return new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
-                }
-            ],
-            # 1, template name is not defined
-            [
-                function () {
-                    $view = new TestingView(new HtmlTemplate(ViewRecordUnitTest::RES_DIR));
-
-                    $view->setViewParameter('model', TestingModel::class);
-
-                    return $view;
-                }
-            ]
-        ];
-    }
-
-    /**
-     * Testing exceptions
-     *
-     * @param callable():TestingView $setup
-     *            setup method
-     * @dataProvider exceptionsDataProvider
-     */
-    public function testExceptions(callable $setup): void
-    {
-        // assertions
-        $this->expectException(\Exception::class);
-
-        // setup
-        $view = $setup();
-
-        // test body
-        $view->viewRecord();
     }
 }

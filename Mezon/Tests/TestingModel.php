@@ -1,5 +1,5 @@
 <?php
-namespace Mezon\View\Tests;
+namespace Mezon\Tests;
 
 class TestingModel
 {

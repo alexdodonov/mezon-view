@@ -1,7 +1,9 @@
 <?php
-namespace Mezon\View\Tests;
+namespace Mezon\Tests\View;
 
 use PHPUnit\Framework\TestCase;
+use Mezon\Tests\TestingView;
+use Mezon\Tests\TestingTemplate;
 
 /**
  * Test cases for the view
@@ -17,7 +19,7 @@ class SetSuccessMessageContentUnitTest extends TestCase
     public function testSetSuccessMessageContent(): void
     {
         // setup
-        $view = new TestingView(new TestingTemplate(__DIR__ . '/Res'));
+        $view = new TestingView(new TestingTemplate(__DIR__ . '/../Res'));
 
         // test body
         $view->setSuccessMessageContent('success-message');

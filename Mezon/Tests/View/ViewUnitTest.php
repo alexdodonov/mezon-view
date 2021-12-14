@@ -1,8 +1,10 @@
 <?php
-namespace Mezon\View\Tests;
+namespace Mezon\Tests\View;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
+use Mezon\Tests\TestingView;
+use Mezon\Tests\TestingViewUnexistingDefault;
 
 /**
  * Test cases for the view
@@ -55,37 +57,12 @@ class ViewUnitTest extends TestCase
     }
 
     /**
-     * Testing template getter
-     */
-    public function testGetTemplate(): void
-    {
-        // setup
-        $view = new TestingView(new HtmlTemplate(__DIR__ . '/Res/Templates/'));
-
-        // test body and assertions
-        $this->assertInstanceOf(HtmlTemplate::class, $view->getTemplate());
-    }
-
-    /**
-     * Testing template getter with exception
-     */
-    public function testGetTemplateException(): void
-    {
-        // setup and assertions
-        $view = new TestingView();
-        $this->expectException(\Exception::class);
-
-        // test body
-        $view->getTemplate();
-    }
-
-    /**
      * Testing method setErrorCode
      */
     public function testSetErrorCode(): void
     {
         // setup
-        $view = new TestingView(new HtmlTemplate(__DIR__));
+        $view = new TestingView(new HtmlTemplate(__DIR__ . '/../Res/'));
 
         // test body
         $view->setErrorCode(111);

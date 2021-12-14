@@ -18,7 +18,7 @@
 		<whitelist addUncoveredFilesFromWhitelist="false">
 			<directory>./</directory>
 			<exclude>
-				<directory>./Mezon/View/Tests</directory>
+				<directory>./Mezon/Tests</directory>
 				<directory>./vendor</directory>
 				<file>autoloader.php</file>
 			</exclude>

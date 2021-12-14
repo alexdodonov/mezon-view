@@ -215,7 +215,13 @@ abstract class ViewBase implements ViewInterface
      */
     public function getViewParameter(string $name, $default = null)
     {
-        return $this->variables[$name] ?? $default;
+        if (isset($this->variables[$name])) {
+            return $this->variables[$name];
+        } elseif ($this->template !== null && $this->template->pageVarExists($name)) {
+            return $this->template->getPageVar($name);
+        } else {
+            return $default;
+        }
     }
 
     /**
