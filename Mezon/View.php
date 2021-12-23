@@ -2,6 +2,7 @@
 namespace Mezon;
 
 use Mezon\HtmlTemplate\HtmlTemplate;
+use Mezon\Transport\Request;
 
 /**
  * Class View
@@ -67,6 +68,13 @@ class View extends ViewBase
                 $this,
                 'view' . $viewName
             ]);
+
+            if (isset($_GET['success-message'])) {
+                $this->setSuccessMessageContent(Request::getParamAsString('success-message'));
+            } elseif (isset($_GET['error-message'])) {
+                $this->setErrorMessageContent(Request::getParamAsString('error-message'));
+            }
+
             return $result;
         }
 

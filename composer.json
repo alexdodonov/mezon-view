@@ -18,7 +18,8 @@
 	"require": {
 		"php": ">=7.2.0",
 		"mezon/http-request-params": "1.0.*",
-		"mezon/html-template": "1.1.*"
+		"mezon/html-template": "1.1.*",
+		"mezon/request": ">=1.0.3 <1.1.0"
 	},
 	"support": {
 		"email": "alexey@dodonov.pro",
@@ -38,6 +39,6 @@
 		"test": "php ./vendor/phpunit/phpunit/phpunit --order-by=random",
 		"psalm": "php ./vendor/vimeo/psalm/psalm --show-info=true --no-cache",
 		"infection": "php ./vendor/infection/infection/bin/infection --threads=4 --min-msi=82",
-		"debug": "php ./vendor/phpunit/phpunit/phpunit --order-by=random --filter testSetErrorMessageContent"
+		"debug": "php ./vendor/phpunit/phpunit/phpunit --order-by=random --random-order-seed=1640270490"
 	}
 }

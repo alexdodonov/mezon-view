@@ -14,6 +14,28 @@ class SetErrorMessageContentUnitTest extends TestCase
 {
 
     /**
+     *
+     * {@inheritdoc}
+     * @see TestCase::setUp()
+     */
+    protected function setUp(): void
+    {
+        unset($_GET['success-message']);
+        unset($_GET['error-message']);
+    }
+
+    /**
+     *
+     * {@inheritdoc}
+     * @see TestCase::tearDown()
+     */
+    protected function tearDown(): void
+    {
+        unset($_GET['success-message']);
+        unset($_GET['error-message']);
+    }
+
+    /**
      * Testing method setErrorMessageContent
      */
     public function testSetErrorMessageContent(): void
@@ -23,6 +45,23 @@ class SetErrorMessageContentUnitTest extends TestCase
 
         // test body
         $view->setErrorMessageContent('error-message');
+
+        // assertions
+        $this->assertEquals('em: error message', $view->getTemplate()
+            ->getPageVar('action-message'));
+    }
+
+    /**
+     * Testing stetting error message from $_GET
+     */
+    public function testSetErrorMessageContentFromGet(): void
+    {
+        // setup
+        $_GET['error-message'] = 'error-message';
+        $view = new TestingView(new TestingTemplate(__DIR__ . '/../Res'));
+
+        // test body
+        $view->render('Test');
 
         // assertions
         $this->assertEquals('em: error message', $view->getTemplate()
