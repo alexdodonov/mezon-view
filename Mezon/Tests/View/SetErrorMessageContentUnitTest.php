@@ -4,6 +4,7 @@ namespace Mezon\Tests\View;
 use PHPUnit\Framework\TestCase;
 use Mezon\Tests\TestingView;
 use Mezon\Tests\TestingTemplate;
+use Mezon\Conf\Conf;
 
 /**
  * Test cases for the view
@@ -22,6 +23,7 @@ class SetErrorMessageContentUnitTest extends TestCase
     {
         unset($_GET['success-message']);
         unset($_GET['error-message']);
+        Conf::setConfigStringValue('headers/layer', 'mock');
     }
 
     /**

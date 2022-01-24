@@ -7,6 +7,7 @@ use Mezon\Router\Router;
 use Mezon\Transport\Request;
 use Mezon\Tests\TestingModel;
 use Mezon\Tests\TestingView;
+use Mezon\Conf\Conf;
 
 /**
  * Test cases for the record view
@@ -17,11 +18,15 @@ class SuccessRenderUnitTest extends TestCase
 {
 
     /**
-     * Default setup
+     *
+     * {@inheritdoc}
+     * @see TestCase::setUp()
      */
-    public static function setUpBeforeClass(): void
+    protected function setUp(): void
     {
+        // TODO move to the base class
         $_GET['id'] = 1;
+        Conf::setConfigStringValue('headers/layer', 'mock');
     }
 
     /**

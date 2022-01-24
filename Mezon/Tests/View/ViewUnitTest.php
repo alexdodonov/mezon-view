@@ -5,6 +5,7 @@ use Mezon\HtmlTemplate\HtmlTemplate;
 use PHPUnit\Framework\TestCase;
 use Mezon\Tests\TestingView;
 use Mezon\Tests\TestingViewUnexistingDefault;
+use Mezon\Conf\Conf;
 
 /**
  * Test cases for the view
@@ -13,6 +14,16 @@ use Mezon\Tests\TestingViewUnexistingDefault;
  */
 class ViewUnitTest extends TestCase
 {
+
+    /**
+     *
+     * {@inheritdoc}
+     * @see TestCase::setUp()
+     */
+    protected function setUp(): void
+    {
+        Conf::setConfigStringValue('headers/layer', 'mock');
+    }
 
     /**
      * Testing constructor
