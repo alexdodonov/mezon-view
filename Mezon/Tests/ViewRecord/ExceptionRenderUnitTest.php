@@ -11,7 +11,7 @@ use Mezon\Tests\TestingModel;
 /**
  * Test cases for the record view
  *
- * @psalm-suppress PropertyNotSetInConstructor
+ * @psalm-suppress PropertyNotSetInConstructor, UnusedClass
  */
 class ExceptionRenderUnitTest extends TestCase
 {

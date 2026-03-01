@@ -12,7 +12,7 @@ use Mezon\Conf\Conf;
 /**
  * Test cases for the record view
  *
- * @psalm-suppress PropertyNotSetInConstructor
+ * @psalm-suppress PropertyNotSetInConstructor, UnusedClass
  */
 class SuccessRenderUnitTest extends TestCase
 {
@@ -34,7 +34,7 @@ class SuccessRenderUnitTest extends TestCase
      *
      * @return array testing data
      */
-    public function viewRecordFormDataProvider(): array
+    public static function viewRecordFormDataProvider(): array
     {
         return [
             # 0, success path

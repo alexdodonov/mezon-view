@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test cases for the static view
  *
- * @psalm-suppress PropertyNotSetInConstructor
+ * @psalm-suppress PropertyNotSetInConstructor, UnusedClass
  */
 class RenderUnitTest extends TestCase
 {

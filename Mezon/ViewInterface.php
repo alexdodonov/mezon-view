@@ -43,7 +43,7 @@ interface ViewInterface
     /**
      * Method sets code of the last error
      *
-     * @param int $code
+     * @param int $errorCode
      *            code of the last error
      */
     public function setErrorCode(int $errorCode): void;

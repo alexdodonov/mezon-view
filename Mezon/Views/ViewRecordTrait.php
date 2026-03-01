@@ -69,7 +69,7 @@ trait ViewRecordTrait
         $record = call_user_func([
             $model,
             $method
-        ], Request::getParam($fieldName));
+        ], Request::getParamAsInt($fieldName));
 
         if (is_array($record) || is_object($record)) {
             return TemplateEngine::printRecord($this->getTemplate()->getBlock($template), $record);

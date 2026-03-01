@@ -6,6 +6,5 @@
 	allowStringToStandInForClass="true" findUnusedCode="true" findUnusedBaselineEntry="false">
 	<projectFiles>
 		<directory name="./Mezon" />
-		<directory name="./vendor/mezon" />
 	</projectFiles>
 </psalm>

@@ -8,7 +8,7 @@ use Mezon\Tests\TestingView;
 /**
  * Test cases for the view
  *
- * @psalm-suppress PropertyNotSetInConstructor
+ * @psalm-suppress PropertyNotSetInConstructor, UnusedClass
  */
 class GetTemplateUnitTest extends TestCase
 {

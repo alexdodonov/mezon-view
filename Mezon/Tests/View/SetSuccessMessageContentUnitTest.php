@@ -9,7 +9,7 @@ use Mezon\Conf\Conf;
 /**
  * Test cases for the view
  *
- * @psalm-suppress PropertyNotSetInConstructor
+ * @psalm-suppress PropertyNotSetInConstructor, UnusedClass
  */
 class SetSuccessMessageContentUnitTest extends TestCase
 {
