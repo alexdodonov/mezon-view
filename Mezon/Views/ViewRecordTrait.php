@@ -43,6 +43,7 @@ trait ViewRecordTrait
      * Default view for displaying single record
      *
      * @return string
+     * @psalm-suppress MixedMethodCall
      */
     public function viewRecord(): string
     {
@@ -60,6 +61,7 @@ trait ViewRecordTrait
 
         $method = (string) $this->getViewParameter('get-record-function', 'getById');
 
+        /** @var class-string $modelClass */
         $model = new $modelClass();
 
         /**
