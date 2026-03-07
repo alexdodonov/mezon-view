@@ -41,4 +41,17 @@ class GetTemplateUnitTest extends TestCase
         // test body
         $view->getTemplate();
     }
+
+    /**
+     * Testing ViewBase::getTemplateBlock method
+     */
+    public function testGetTemplateBlock(): void
+    {
+
+        // setup
+        $view = new TestingView(new HtmlTemplate(__DIR__ . '/../Res/'));
+
+        // test body and assertions
+        $this->assertEquals('some {block} {unexisting-var}', $view->getTemplateBlock('block'));
+    }
 }

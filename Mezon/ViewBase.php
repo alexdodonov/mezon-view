@@ -101,6 +101,18 @@ abstract class ViewBase implements ViewInterface
     }
 
     /**
+     * Method returns template block
+     *
+     * @param string $blockName
+     *            block name
+     * @return string template block
+     */
+    public function getTemplateBlock(string $blockName): string
+    {
+        return $this->getTemplate()->getBlock($blockName);
+    }
+
+    /**
      * Method returns code of the last error
      *
      * @return int code of the last error
