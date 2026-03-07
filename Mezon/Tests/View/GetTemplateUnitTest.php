@@ -47,7 +47,6 @@ class GetTemplateUnitTest extends TestCase
      */
     public function testGetTemplateBlock(): void
     {
-
         // setup
         $view = new TestingView(new HtmlTemplate(__DIR__ . '/../Res/'));
 
